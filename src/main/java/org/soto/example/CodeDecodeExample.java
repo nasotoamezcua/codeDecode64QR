@@ -46,9 +46,11 @@ public class CodeDecodeExample {
 			System.out.println("cadena: " + cadena);
 			BarcodeQRCode codeQR = new BarcodeQRCode(cadena, 0, 0, null);
 			Image imageQR = codeQR.createAwtImage(Color.BLACK, Color.WHITE);
-			BufferedImage buffImage = new BufferedImage(imageQR.getWidth(null), imageQR.getHeight(null), BufferedImage.TYPE_BYTE_BINARY);
+			//BufferedImage buffImage = new BufferedImage(imageQR.getWidth(null), imageQR.getHeight(null), BufferedImage.TYPE_BYTE_BINARY);
+			BufferedImage buffImage = new BufferedImage(100, 100, BufferedImage.TYPE_BYTE_BINARY);
 			Graphics g = buffImage.createGraphics();
-			g.drawImage(imageQR, 0, 0, null);
+			//g.drawImage(imageQR, 0, 0, null);
+			g.drawImage(imageQR, 0, 0, 100, 100, null);
 			g.dispose();
 			return buffImage;
 		}catch (Exception e) {
